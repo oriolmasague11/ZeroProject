@@ -3,15 +3,37 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+public enum ScreenSize
+{
+    Bottom = 0, 
+    Left = 1,
+    Right = 2, 
+    Top = 3
+}
+
 public class Spawner : MonoBehaviour
 {
+    [SerializeField] private float maxHorizontalPosition = 9.5f;
+    [SerializeField] private float maxVerticalPostion = 9.5f;
+    [SerializeField] private float verticalSpawnDistance = 12f;
+    [SerializeField] private float horizontalSpawnDistance = 12f;
+
+
     [SerializeField] private EnemyControler enemyPrefab; 
     [SerializeField] private BlackSquareControler blackSquarePrefab;
+    //other prefabs... 
+    [SerializeField] private readonly float[] zRotation = new float[4];
 
     private void Awake()
     {
         enemyPrefab = Resources.Load<EnemyControler>("iSquared/Prefabs/Enemy");
-        blackSquarePrefab = Resources.Load<BlackSquareControler>("iSquared/Prefabs/BlackSquare"); 
+        blackSquarePrefab = Resources.Load<BlackSquareControler>("iSquared/Prefabs/BlackSquare");
+
+        // set rotations 
+        zRotation[(int) ScreenSize.Bottom] = 0;
+        zRotation[(int) ScreenSize.Right] = 90;
+        zRotation[(int) ScreenSize.Left] = -90;
+        zRotation[(int) ScreenSize.Top] = 180;
     }
 
     Vector2 GetRandomStartPosition()

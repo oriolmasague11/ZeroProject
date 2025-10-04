@@ -224,9 +224,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1579476584}
   - component: {fileID: 1579476583}
-  - component: {fileID: 1579476585}
   - component: {fileID: 1579476587}
   - component: {fileID: 1579476586}
+  - component: {fileID: 1579476585}
+  - component: {fileID: 1579476588}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -313,6 +314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451e7bd2079e0264790c219115c2adb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontalLimit: 10
+  verticalLimit: 10
   speed: 10
 --- !u!50 &1579476586
 Rigidbody2D:
@@ -386,6 +389,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1579476588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579476582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c8fd53e71b66a4895e05c68caa865a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1833859415
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +430,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85653c80ca7717499fcc063ca93851d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHorizontalPosition: 9.5
+  maxVerticalPostion: 9.5
+  verticalSpawnDistance: 12
+  horizontalSpawnDistance: 12
   enemyPrefab: {fileID: 529307113649048609, guid: 73bd47c98488fb94199b3da863883747, type: 3}
   blackSquarePrefab: {fileID: 2780039765655586560, guid: ea7a803ca2c1a2c4395230a1eb08e819, type: 3}
 --- !u!4 &1833859417
